@@ -30,7 +30,7 @@ function jac_meta_box_quote_html($post){
 			)
 		);	
 		
-		echo "Short code: [ citation id=".$id." ]";
+		echo 'Short code: [mc-citacion post_id='.$id.']';
 
 }
 

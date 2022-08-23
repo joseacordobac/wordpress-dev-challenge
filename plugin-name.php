@@ -10,11 +10,11 @@
  * @package Plugin_Name
  *
  * @wordpress-plugin
- * Plugin Name:     Plugin Name
- * Description:     This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Plugin Name:     Plugin dev challenge
+ * Description:     Function of custom field sitation and identify error links
  * Version:         0.0.1
- * Author:          Your Name
- * Author URI:      https://www.example.com
+ * Author:          Jose Alfredo Córdoba Cadacid
+ * Author URI:      https://www.linkedin.com/in/jose-alfredo-c%C3%B3rdoba-cadavid-936a03153/
  * License:         GPL-2.0+
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:     plugin-name
@@ -82,11 +82,16 @@ if ( ! class_exists( 'plugin_name' ) ) {
 		 * Include required core files
 		 */
 		public function includes() {
-            // Example
+      // Example
 			require_once __DIR__ . '/includes/loader.php';
 
 			// Load custom functions and hooks
 			require_once __DIR__ . '/includes/includes.php';
+			
+			//Files for challenge - 01
+			require_once __DIR__. '/admin/challenge-1/add-mbox.php';
+			require_once __DIR__. '/admin/challenge-1/short-code.php';
+			
 		}
 
 		/**

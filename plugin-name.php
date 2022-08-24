@@ -91,6 +91,9 @@ if ( ! class_exists( 'plugin_name' ) ) {
 			//Files for challenge - 01
 			require_once __DIR__. '/admin/challenge-1/add-mbox.php';
 			require_once __DIR__. '/admin/challenge-1/short-code.php';
+
+			//Files for challenge - 02
+			require_once __DIR__.'/admin/challenge-2/menu-challenge.php';
 			
 		}
 

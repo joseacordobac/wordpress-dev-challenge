@@ -15,7 +15,7 @@ if( !function_exists('jac_menu_error_anchor')){
 			'JAC Challenge #2',
 			'manage_options',
 			'jac_challenge_2',
-			'jac_challenge_2_page_display',
+			'get_cron_jobs',
 			'dashicons-smiley',
 			10
 		);
@@ -24,11 +24,11 @@ if( !function_exists('jac_menu_error_anchor')){
 
 }
 
-if(!function_exists('jac_challenge_2_page_display')){
-	function jac_challenge_2_page_display(){
+if(!function_exists('get_cron_jobs')){
+	function get_cron_jobs(){
 		
-		if( file_exists( __DIR__.'./includes/challenge-wp-list-table.php')){
-			require_once __DIR__.'./includes/challenge-wp-list-table.php';
+		if( file_exists( __DIR__.'./includes/jac_cron-jobs.php')){
+			require_once __DIR__.'./includes/jac_cron-jobs.php';
 		}
 
 	}

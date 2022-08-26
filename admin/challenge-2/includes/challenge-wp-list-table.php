@@ -7,7 +7,6 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 class JAC_table_list extends WP_List_Table{
 
 	public function get_all_data(){
-		$data_array = [];
 
 		global $wpdb;
 		$sql = "SELECT ID, post_content FROM wp_posts WHERE (post_content LIKE '%href=%');";
@@ -49,7 +48,7 @@ class JAC_table_list extends WP_List_Table{
 										'cb'		=> '<input type="checkbox" class="jac-selected" />',
 										'id'	=> $post_id,
 										'url' 		=> 	$url,
-										'state'			=> '<span class="message">'.$message_code.'</span>',
+										'state'			=> '<span class="text-info">'.$message_code.'</span>',
 										'origin' => '<a target="_blank" href="'.$posturl.'" class="title-anchor">'.$title.'<a>'
 									];
 								}
@@ -64,8 +63,8 @@ class JAC_table_list extends WP_List_Table{
 
 	public function prepare_items_data(){
 
-		$this->items = $this->get_all_data();
-		$columns = $this->get_columns();
+			$this->items = $this->get_all_data();
+			$columns = $this->get_columns();
 		
 		$this->_column_headers = array($columns);
 
@@ -107,3 +106,18 @@ function JAC_table_data_list(){
 	$JAC_table_list -> display();
 
 }
+
+JAC_table_data_list();
+
+
+
+
+
+// /* --- */
+// echo "<pre>";
+// var_dump(wp_get_schedules());
+// echo "\n";
+// echo wp_get_schedule('jac_run_cron');
+// echo "\n";
+// var_dump(_get_cron_array());
+// echo "<pre>";

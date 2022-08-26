@@ -4,6 +4,8 @@
 	die('Direct access not permitted.');
 }
 
+global $data_array;
+$data_array = array();
 
 if( !function_exists('jac_menu_error_anchor')){
 
@@ -15,7 +17,7 @@ if( !function_exists('jac_menu_error_anchor')){
 			'JAC Challenge #2',
 			'manage_options',
 			'jac_challenge_2',
-			'get_cron_jobs',
+			'jac_list_table',
 			'dashicons-smiley',
 			10
 		);
@@ -24,12 +26,14 @@ if( !function_exists('jac_menu_error_anchor')){
 
 }
 
-if(!function_exists('get_cron_jobs')){
-	function get_cron_jobs(){
+if(!function_exists('jac_list_table')){
+	function jac_list_table(){
 		
-		if( file_exists( __DIR__.'./includes/jac_cron-jobs.php')){
-			require_once __DIR__.'./includes/jac_cron-jobs.php';
+		if( file_exists( __DIR__.'./includes/challenge-wp-list-table.php')){
+			require_once __DIR__.'./includes/challenge-wp-list-table.php';
 		}
 
 	}
 }
+
+require_once __DIR__.'./includes/jac-cron.php'; //Register cron
